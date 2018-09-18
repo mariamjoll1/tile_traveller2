@@ -16,32 +16,128 @@ tile_x = 1
 tile_y = 1
 location = tile_x, tile_y
 travel = "You can travel: "
-        
+direction = ""
 
-while tile_x != 3 and tile_y != 1:
+
+#if tile_x == 3 and tile_y == 1:
+ #   print("Victory!")
+
+
+while not(tile_x == 3 and tile_y == 1):
 
     if tile_x == 1 and tile_y == 1:
-        print(travel + "(N)orth")
-        direction = str(input("Direction: ")).lower
+        if (len(direction) == 0):
+            print(travel + "(N)orth.")
+        direction = str(input("Direction: ")).lower()
+
         if direction == "n":
+            tile_y += 1
+            direction = ""
+        else:
+           print("Not a valid direction!")
+
+    if tile_x == 1 and tile_y == 2:
+        if (len(direction) == 0):
+            print(travel + "(N)orth or (E)ast or (S)outh.")
+        direction = str(input("Direction: ")).lower()
+
+        if direction == "n":
+            tile_y += 1
+            direction = ""
+        elif direction == "e":
             tile_x += 1
-            location == 12
+            direction = ""
+        elif direction == "s":
+            tile_y -= 1
+            direction = ""
         else:
             print("Not a valid direction!")
 
-    if location == 12:
 
-        print(travel + "(N)orth or (E)ast or (S)outh.")
-        direction = str(input("Direction: ")).lower
-        if direction == "N":
-            location == 13
-        elif direction == "E":
-            location == 21
-        elif direction == "S":
-            location == 11
+    if tile_x == 1 and tile_y == 3:
+        if (len(direction) == 0):
+            print(travel + "(E)ast or (S)outh.")
+        direction = str(input("Direction: ")).lower()
+
+        if direction == "s":
+            tile_y -= 1
+            direction = ""
+        elif direction == "e":
+            tile_x += 1
+            direction = ""
         else:
             print("Not a valid direction!")
-    
+
+    if tile_x == 2 and tile_y == 1:
+        if (len(direction) == 0):
+            print(travel + "(N)orth.")
+        direction = str(input("Direction: ")).lower()
+        
+        if direction == "n":
+            tile_y += 1
+            direction = ""
+        else:
+            print("Not a valid direction!")
+
+
+    if tile_x == 2 and tile_y == 2:
+        if (len(direction) == 0):
+            print(travel + "(S)outh or (W)est.")
+        direction = str(input("Direction: ")).lower()
+
+        if direction == "w":
+            tile_x -= 1
+            direction = ""
+        elif direction == "s":
+            tile_y -= 1
+            direction = ""
+        else:
+            print("Not a valid direction!")
+
+    if tile_x == 2 and tile_y == 3:
+        if (len(direction) == 0):
+            print(travel + "(E)ast or (W)est.")
+        direction = str(input("Direction: ")).lower()
+
+        if direction == "e":
+            tile_x += 1
+            direction = ""
+        elif direction == "w":
+            tile_x -= 1
+            direction = ""
+        else:
+            print("Not a valid direction!")
+
+
+    if tile_x == 3 and tile_y == 2:
+        if (len(direction) == 0):
+            print(travel + "(N)orth or (S)outh.")
+        direction = str(input("Direction: ")).lower()
+
+        if direction == "n":
+            tile_y += 1
+            direction = ""
+        elif direction == "s":
+            print("Victory!")
+            tile_y -= 1
+            direction = ""
+        else:
+            print("Not a valid direction")
+
+    if tile_x == 3 and tile_y == 3:
+        if (len(direction) == 0):
+            print(travel + "(S)outh or (W)est.")
+        direction = str(input("Direction: ")).lower()
+
+        if direction == "s":
+            tile_y -= 1
+            direction = ""
+        elif direction == "w":
+            tile_x -= 1
+            direction = ""
+        else:
+            print("Not a valid direction")
+
 
 
 
