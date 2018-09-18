@@ -14,20 +14,9 @@ def move(direction, axis):
         return "Not a valid direction!"
         
 
-def north(y):
-    y += 1
-    return y
-def south(y):
-    y -= 1
-    return y
-def east(x):
-    x += 1
-    return x
-def west(x):
-    x -= 1
-    return x
+
 def invalid():
-    return "Not a valid direction!"
+    print( "Not a valid direction!")
 
 
 while not(tile_x == 3 and tile_y == 1):
